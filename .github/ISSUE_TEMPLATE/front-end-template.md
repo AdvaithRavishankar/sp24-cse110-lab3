@@ -3,7 +3,7 @@ name: Front End Template
 about: Issue Regarding GUI/Website Visuals
 title: ''
 labels: front_end_feature
-assignees: ''
+assignees: AdvaithRavishankar
 
 ---
 
