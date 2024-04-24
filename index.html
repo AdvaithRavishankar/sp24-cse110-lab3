@@ -1,7 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&display=swap" rel="stylesheet">
   <head>
     <title>Advaith's Lab 2: Meeting Notes</title>
+
+    <style>
+      /* Root definition of color variables */
+      :root {
+        --base-bg-color: cornflowerblue;
+        --fancy-bg-color: color-mix(in lch, plum 40%, pink);
+        --display-p3: color(display-p3 1 1 1);
+      }
+
+      :hover {
+        color: hotpink;
+      }
+
+      p:hover {
+        color: orange;
+      }
+
+      *{
+        color: black;
+      }
+
+      [title~="logo"] {
+        border: 5px solid yellow;
+      }
+
+      #jacquard-12-charted-regular {
+        font-family: "Jacquard 12 Charted", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      
+      /* Style rules for base text */
+      .base_text {
+        color: black;
+        background-color: var(--base-bg-color);
+        font-size: 1vw;
+        text-decoration: underline;
+      }
+
+      /* Style rules for fancy text */
+      .fancy_text {
+        color: black;
+        background-color: var(--fancy-bg-color);
+        font-size: 5vw;
+      }
+
+      /* Style rules for basic text */
+      .basic_text {
+        color: var(--display-p3);
+        background-color: aquamarine;
+        margin: auto;
+      }
+
+      /* Complex background style for .box */
+      .box {
+        background:
+          linear-gradient(
+              105deg,
+              rgb(255 255 255 / 20%) 39%,
+              rgb(51 56 57 / 100%) 96%
+            ) left / 400px 200px no-repeat,
+          url(big-star.png) center no-repeat,
+          rebeccapurple;
+      }
+
+      /* Styles for an element with class .alternative_boundry */
+      .alternative_boundry{
+          color: black;
+          text-align: left;
+          font-size: 1rem;
+          margin: 10px 10px 10px 10px; 
+          padding: 10px 15px 10px 15px;
+          border-style: solid;
+          border-color: var(--base-bg-color); 
+          border-width: 2px;  
+          border-radius: 5px;   
+      }
+
+      /* Flexbox container with automatic layout capabilities */
+      @media (max-width: 768px){}
+      .flex-container {
+          display: flex; 
+          flex-wrap: wrap; 
+          justify-content: space-between; 
+          align-items: center; 
+      }
+
+      /* Children elements of the Flexbox container */
+      .flex-container > div {
+          flex: 1; 
+          padding: 10px; 
+          border: 1px solid #ccc; 
+      }
+
+      /* Grid container for structured layouts */
+      .grid-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 10px;
+          align-items: center;
+      }
+
+      /* Children elements of the Grid container */
+      .grid-container > div {
+          background-color: #f0f0f0;
+          padding: 20px;
+          text-align: center;
+          border: 1px solid #ddd;
+      }
+      
+      /* Media queries for Flexbox and Grid containers */
+      @media (max-width: 768px) {
+          .flex-container {
+              flex-direction: column; /* Stacks flex items vertically on smaller screens */
+          }
+          .flex-container > div {
+              flex: none; /* Disables flex grow and shrink */
+              width: 100%; /* Full width for better mobile visibility */
+          }
+
+          .grid-container {
+              grid-template-columns: repeat(2, 1fr); /* Only two columns on smaller screens */
+          }
+      }
+
+      @media (max-width: 480px) {
+          .grid-container {
+              grid-template-columns: 1fr; /* One column layout for very small screens */
+          }
+      }
+      /* Body background image */
+      body {
+        background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);;
+      }
+
+      /* Paragraph styles */
+      p {
+        color: black;
+        position: relative;
+        font-size: 1rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-style: solid;
+        border-color: black;
+        border-width: 2px; 
+        border-radius: 5px;
+        flex-wrap: wrap;
+      }
+
+      div + p {
+        background-color: purple;
+      }
+
+      div ~ p {
+        background-color: purple;
+      }
+
+      /* Heading 1 styles */
+      h1 {
+        color: #FFD700;
+        text-align: center;
+        font-size: 64px;
+      }
+
+      h1:has(+ h2) {
+        margin: 0 0 0.25rem 0;
+      }
+
+      /* Heading 2 styles */
+      h2, .special {
+        color: rbg(0,0,128);
+        position: static;
+        font-size: 32pt;
+      }
+
+      /* Heading 3 styles */
+      h3 {
+        color: hsl(50 80% 40%);
+        text-align: left;
+        font-size: 32pt;
+        display: inline-flex;
+      }
+
+      div > ol {
+        background-color: green;
+      }
+
+      .block,
+      li {
+        border: 2px solid blue;
+        padding: .5em;
+        
+      }
+
+      ul {
+        display: flex; 
+        list-style: none;  
+        height: 100px;  
+        width: 80%; 
+        max-width: 1200px;
+        min-width: 300px;  
+    }
+
+      .block {
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <div class="Header">
@@ -12,7 +229,7 @@
 
     <div class="attendance">
         <h2>Attendance</h2>
-        <ul>
+        <ul class="basic_text">
           <li><b>Advaith</b></li>
           <li><strong>Jim</strong></li>
           <li><i>Ned</i></li>
@@ -22,43 +239,67 @@
       
     <div class="agenda">
         <h2>Agenda</h2>
-        <ol>
+        <ol class="fancy_text">
           <li>Introductuce ourselves</li>
           <li>Ice Breaker Session by playing Scribll</li>
-          <li>Define rules of engangementl/li>
+          <li>Define rules of engangement</li>
         </ol>
     </div>
 
     <div class="Bussiness">
         <h2>UnFinished Bussiness</h2>
-        <p> None as this is the meeting kickoff!</p>
+        <p>this is the meeting kickoff!</p>
+        <div class="grid-container">
+          <div>This</div>
+          <div>Is</div>
+          <div>Jover</div>
+        </div>
+
+        <div class="flex-container">
+          <div>We</div>
+          <div>Are</div>
+          <div>The Best</div>
+      </div>
     </div>
       
     <div class="TODOs">
         <h2>TODOS</h2>
-        <ol>
+        <ol class="base_text">
             <li>Advaith Will create the rules</li>
             <li>Everyone read the rules and make updates</li>
             <li>Everyone will sign the rules and start a pull request</li>
-          </ol>
+        </ol>
     </div>
 
     <div class="comments">
         <h2>Comments</h2>
-        <p> Scribbl is a good ice breaker! loved the idea!</p>
+        <p class="alternative_boundry"> Scribbl is a good ice breaker! loved the idea!</p>
+        <div>
+          <div>
+            <p>My name is Advaith Ravishankar</p>
+          </div>
+          <p> I want to showcase my webpage</p>
+        </div>
+
+
+        <p>Hi again</p>
+        <section>
+          <p> this is also to showcase some niche skills</p>
+        </section>
+        
     </div>
 
     <div class="Diagrams">
         <h2>Diagrams</h2>
-        <h3>Team Logo</h3>
+        <h3 class="box">Team Logo</h3>
         <figure>
-          <img src="sample_content/logo.png" alt="Team Logo">
+          <img src="sample_content/logo.png" alt="Team Logo" title="logo">
         </figure>
         <!-- Add more figures for additional diagrams or pictures -->
     </div>
       
     <div class="Recordings">
-        <h2>Recordings</h2>
+        <h2 id="jacquard-12-charted-regular">Recordings</h2>
         <audio controls>
           <source src="sample_content/sample_audio.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
@@ -110,7 +351,7 @@
     </form>
 
     <footer>
-        <p>Copyright &copy; Advaith Ravishankar</p>
+        <p class=".special">Copyright &copy; Advaith Ravishankar</p>
     </footer>
   </body>
 </html>
