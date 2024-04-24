@@ -10,10 +10,8 @@
       /* Root definition of color variables */
       :root {
         --base-bg-color: cornflowerblue;
-        --fancy-bg-color: plum; /* Fallback color */
-        --fancy-bg-color: color-mix(in lch, plum 40%, pink);
-        --displat-p3: orange;
-        --display-p3: color(display-p3 1 1 1);
+        --fancy-bg-color: plum;
+        --display-p3: orange;
       }
 
       :hover {
@@ -41,7 +39,7 @@
       
       /* Style rules for base text */
       .base_text {
-        color: black;
+        color: color-mix(in lch, plum 40%, pink);
         background-color: var(--base-bg-color);
         font-size: 1vw;
         text-decoration: underline;
